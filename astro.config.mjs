@@ -92,7 +92,7 @@ export default defineConfig({
     brotli: true
   }),
 ],
-  output: "hybrid",
+  output: "static",
   experimental: {
     clientPrerender: true,
     directRenderScript: true
