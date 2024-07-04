@@ -21,7 +21,7 @@ export default defineConfig({
       baseUrl: 'https://github.com/spryker-community/spryker-community.github.io/edit/main'
     },
     logo: {
-      src: './src/images/starlight/CQ_logo.svg',
+      src: './src/images/starlight/CQ_logo.png',
       replacesTitle: true
     },
     defaultLocale: "root",
