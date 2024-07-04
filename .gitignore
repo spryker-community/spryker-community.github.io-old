@@ -1,5 +1,13 @@
 # build output
 dist/
+
+# Netlify stuff
+.netlify/
+
+# VSCode stuff
+.vscode/
+.prettierrc
+
 # generated types
 .astro/
 .idea/
