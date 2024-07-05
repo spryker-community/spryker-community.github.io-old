@@ -1,19 +1,18 @@
 ---
-title: "Shield & Secure: Enhancing Spryker Safety"
-description: "Turbine Kreuzberg, Berlin"
-author: "Samuel"
-authorImage: "@/images/blog/jacob.avif"
-authorImageAlt: "Samuel Pais"
-pubDate: 2024-05-13
-cardImage: "@/images/spryker-event-2.jpg"
-cardImageAlt: "Top view mechanical tools arrangement"
-readTime: 4
-tags: ["hackathon", "security", "Berlin" ]
-contents: [
-        "The theme of this Hackathon is all about security. Time to hack your way into potential vulnerabilities! Together with Turbine Kreuzberg, here's an invitation to innovate and secure the Spryker Commerce OS. Let’s unite to enhance our digital defenses and ensure a trusted, seamless e-commerce experience for all.",
-        "Our range of hardware tools combines precision engineering with user-centric design, ensuring maximum productivity on every job site. From power drills to advanced fastening solutions, CommerceQuest's tools are built to withstand the rigors of construction while streamlining your workflow.",
-        "One of our standout offerings is our intuitive dashboards, which provide real-time insights into project progress, resource allocation, and more. With user-friendly interfaces, navigating and overseeing your projects has never been easier.",
-        "But efficiency isn't just about the tools you use—it's also about the support you receive. That's why ScrewFast offers comprehensive documentation and expert guidance every step of the way. Our dedicated teams are committed to your success, providing personalized assistance to ensure you get the most out of our products.",
-        "Join the countless industry leaders who have already experienced the difference ScrewFast tools can make. With our cutting-edge solutions, you can fast-track your projects to success and stay ahead of the competition."
+title: "Double your development speed!"
+description: "Affordable, durable tools for efficient construction projects"
+author: "Olga Zabegina"
+role: "Strategic Marketing Manager"
+authorImage: "@/images/blog/anna.avif"
+authorImageAlt: "Avatar Description"
+pubDate: 2024-03-13
+cardImage: "@/images/blog/post-3.avif"
+cardImageAlt: "Side view worker wearing gloves"
+tags: ["hackathon", "performance", "Berlin" ]
+content: [
+        "Managing a construction project can be overwhelming, especially when it comes to procurement. That's why ScrewFast is committed to simplifying the process and keeping your projects within budget.",
+        "With our line of affordable tools and equipment, you can find everything you need without breaking the bank. Our user-centric design ensures that our products are easy to use, saving you time and frustration on the job site.",
+        "But affordability doesn't mean sacrificing quality. ScrewFast products are built to last, providing reliable performance and durability when you need it most. And with our comprehensive documentation and tutorials, you can integrate our products seamlessly into your workflow, maximizing efficiency and productivity.",
+        "Whether you're a DIY enthusiast or a seasoned contractor, ScrewFast has the solutions you need to succeed. Experience the difference for yourself and see why ScrewFast is the trusted choice for hardware and construction needs."
 ]
 ---

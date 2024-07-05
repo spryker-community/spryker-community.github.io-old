@@ -58,7 +58,7 @@ const blogCollection = defineCollection({
   schema: ({ image }) => z.object ({
   title: z.string(),
   description: z.string(),
-  contents: z.array(z.string()),
+  content: z.array(z.string()),
   author: z.string(),
   role: z.string().optional(),
   authorImage: image(),
@@ -66,10 +66,27 @@ const blogCollection = defineCollection({
   pubDate: z.date(),
   cardImage: image(),
   cardImageAlt: z.string(),
-  readTime: z.number(),
   tags: z.array(z.string()).optional(),
   }),
 });
+
+// KEYSTATIC TEST
+// const blogCollection = defineCollection({
+//   type: "content",
+//   schema: ({ image }) => z.object ({
+//   title: z.string(),
+//   description: z.string(),
+//   authors: z.array(z.string()).optional(),
+//   role: z.string().optional(),
+//   authorImage: image().optional(),
+//   authorImageAlt: z.string().optional(),
+//   pubDate: z.date(),
+//   cardImage: image(),
+//   cardImageAlt: z.string(),
+//   tags: z.array(z.string()).optional(),
+//   content: z.array(z.string()),
+//   }),
+// });
 
 const insightsCollection = defineCollection({
   type: "content",
