@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev --host",
+    "start": "astro dev",
     "build": "astro check && astro build && node process-html.mjs",
     "preview": "astro preview",
     "astro": "astro"
@@ -17,11 +17,18 @@
     "@astrojs/starlight": "^0.24.5",
     "@astrojs/starlight-tailwind": "^2.0.3",
     "@astrojs/tailwind": "^5.1.0",
+    "@preline/accordion": "^2.3.0",
+    "@preline/collapse": "^2.3.0",
+    "@preline/dropdown": "^2.3.0",
+    "@preline/overlay": "^2.3.0",
+    "@preline/tabs": "^2.3.0",
     "astro": "^4.11.5",
     "astro-compressor": "^0.4.1",
+    "clipboard": "^2.0.11",
     "globby": "^14.0.1",
     "gsap": "^3.12.5",
     "html-minifier-terser": "^7.2.0",
+    "lenis": "^1.1.4",
     "preline": "^2.0.3",
     "sharp": "^0.33.3",
     "sharp-ico": "^0.1.5",
@@ -33,6 +40,6 @@
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
     "prettier-plugin-tailwindcss": "^0.5.13",
-    "typescript": "^5.4.3"
+    "typescript": "^5.5.3"
   }
 }
