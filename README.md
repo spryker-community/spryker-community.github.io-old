@@ -10,7 +10,7 @@ Welcome to our website & docs repo!
 <br/>
 <a href="https://site.commercequest.space/"><strong>Explore the website »</strong></a> | <a href="https://site.commercequest.space/guides/intro/"><strong>Explore the docs »</strong></a>
 
-  ![GitHub last commit](https://img.shields.io/github/last-commit/spryker-community/spryker-community.github.io?label=latest%20website%20update) [![Report an issue](https://img.shields.io/badge/Report%20an-issue-red?style=flat-square)](https://www.gui.do/presentation)
+ [![Netlify Status](https://api.netlify.com/api/v1/badges/fbddb2a9-b4b2-4b10-bc73-f31062131947/deploy-status)](https://app.netlify.com/sites/spryker-community/deploys) ![GitHub last commit](https://img.shields.io/github/last-commit/spryker-community/spryker-community.github.io?label=latest%20website%20update) [![Report an issue](https://img.shields.io/badge/Report%20an-issue-red?style=flat-square)](https://www.gui.do/presentation)
 </div>
 
  ## Background:
