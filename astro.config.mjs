@@ -4,8 +4,11 @@ import sitemap from "@astrojs/sitemap";
 import compressor from "astro-compressor";
 import starlight from "@astrojs/starlight";
 import { fileURLToPath } from 'node:url';
-
 import netlify from "@astrojs/netlify";
+
+import react from "@astrojs/react";
+import markdoc from "@astrojs/markdoc";
+import keystatic from '@keystatic/astro'
 
 // https://astro.build/config
 export default defineConfig({
@@ -90,8 +93,7 @@ export default defineConfig({
   }), compressor({
     gzip: false,
     brotli: true
-  }),
-],
+  }), react(), markdoc(), keystatic()],
   output: "hybrid",
   experimental: {
     clientPrerender: true,
