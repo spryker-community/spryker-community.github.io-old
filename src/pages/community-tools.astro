@@ -1,0 +1,34 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import { SITE } from "@data/constants";
+import MainSection from "../components/ui/blocks/MainSection.astro";
+import CommunityToolsTable from "../components/ui/tables/CommunityToolsTable.astro";
+import communityTools from "@data/communityTools.json";
+
+const pageTitle: string = `Community Tools | ${SITE.title}`;
+---
+
+<MainLayout
+  title={pageTitle}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://commercequest.space/",
+    "url": "https://commercequest.space/",
+    "name": "Hack, Build, Win. | CommerceQuest",
+    "description": "Commerce Resources for the driven Spryker, Propel & Oryx developer.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "url": "https://commercequest.space/",
+      "name": "CommerceQuest",
+      "description": "Commerce Resources for the driven Spryker, Propel & Oryx developer."
+    },
+    "inLanguage": "en-US"
+  }}
+>
+  <MainSection
+    title="Community Extensions & Tools"
+    subTitle=" We are lucky to have a community that doesn't only build with Spryker, but also contributes back to the ecosystem! Below you'll find a list of - non-official - resources that have been created by our community that can help you work better and faster with our products. In no particular order:"
+  />
+  <CommunityToolsTable tools={communityTools} />
+</MainLayout>
