@@ -1,15 +1,10 @@
 // An array of links for navigation bar
 const navBarLinks = [
-//  { name: "Home", url: "/" },
   { name: "Home", url: "/" },
   { name: "Forum", url: "https://commercequest.space/" },
-  { name: "Extensions & Tools", url: "https://github.com/orgs/spryker-community/repositories" },
+  { name: "Extensions & Tools", url: "/community-tools" },
   { name: "Upcoming Events", url: "https://commercequest.space/events/category" },
   { name: "Event Recaps", url: "/blog" },
-  //  { name: "Jobs", url: "https://commercequest.space/categories/jobs" },
-  //  { name: "Products", url: "/products" },
-  // { name: "About", url: "/about" },
-  // { name: "Contact", url: "/contact" },
 ];
 // An array of links for footer
 const footerLinks = [
@@ -25,12 +20,10 @@ const footerLinks = [
     section: "Community",
     links: [
       { name: "Forum", url: "/" },
-      { name: "Extensions & Tools", url: "https://github.com/orgs/spryker-community/repositories" },
+      { name: "Extensions & Tools", url: "/community-tools" },
       { name: "Upcoming Events", url: "https://commercequest.space/events/category" },
       { name: "Event Recaps", url: "/blog" },
       { name: "Guides", url: "/guides/intro" },
-      // { name: "Jobs", url: "https://commercequest.space/categories/jobs" },
-      // { name: "Customers", url: "https://spryker.com/customer-overview/" },
     ],
   },
   {
@@ -40,7 +33,6 @@ const footerLinks = [
       { name: "Code of Conduct", url: "https://commercequest.space/discussion/27749/community-guidelines-code-of-conduct" },
       { name: "Help improve this site", url: "https://github.com/spryker-community/spryker-community.github.io?tab=readme-ov-file#landingpage--docs" },
       { name: "Contact", url: "/contact" },
-      // { name: "Customers", url: "https://spryker.com/customer-overview/" },
     ],
   },
 ];

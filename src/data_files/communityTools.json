@@ -1,0 +1,172 @@
+[
+  {
+    "title": "SprykerKit for PhpStorm",
+    "subtitle": "",
+    "description": "Supports the development of <a href=\"https://www.spryker.com\" target=\"_blank\">Spryker</a> applications with Intellij IDEA.\n<br /><br />Features:\n<ul><li>Create Spryker Module boilerplate based on your current context</li>\n<li>Create Spryker Files and Folders based on your current context</li>\n<li>Supported Layers Client, Glue, Service, Shared, Yves, Zed</li>\n<li>Configure desired project namespace</li>\n</ul>",
+    "tags": [],
+    "license": "MIT",
+    "creators": [{"name": "Valantic", "url": "https://github.com/valantic-CEC-Deutschland-GmbH"}],
+    "contributors": [],
+    "links": [
+      {
+        "label": "JetBrains marketplace",
+        "url": "https://plugins.jetbrains.com/plugin/18766-sprykerkit"
+      },
+      {
+        "label": "Github",
+        "url": "https://github.com/valantic-CEC-Deutschland-GmbH/spryker-kit-intellij-plugin"
+      }
+
+    ]
+  },
+  {
+    "title": "PYZ for PhpStorm",
+    "subtitle": "",
+    "description": "This plugin was created during the <i>Turbine Kreuzberg Breakout Week</i> as a learning project by a bunch of PHP developers.\n<ul>\n<li>Extend Spryker core classes, interfaces and xml files on project level (right-click -> Extend in PYZ / CTRL-ALT-E)</li>\n<li>Open Spryker files on github.com (right-click -> View on GitHub / CTRL-ALT-G)</li>\n<li>Goto-handling for Zed stub calls and their gateway controller actions (URLs are clickable)</li>\n<li>Resolve usages of gateway controller actions in Zed stub calls</li>\n</ul>",
+    "tags": [],
+    "license": "MIT",
+    "creators": [{"name": "Turbine Kreuzberg", "url": "https://github.com/turbine-kreuzberg/"}],
+    "contributors": [],
+    "links": [
+      {
+        "label": "Github",
+        "url": "https://github.com/turbine-kreuzberg/spryker-idea-plugin"
+      }
+    ]
+  },
+  {
+    "title": "Spryker Debug",
+    "subtitle": "",
+    "description": "Collection of Spryker-compatible debug and development tools.",
+    "tags": [],
+    "license": "MIT",
+    "creators": [{"name": "Inviqa", "url": "https://github.com/inviqa/"}],
+    "contributors": [],
+    "links": [
+      {
+        "label": "Github",
+        "url": "https://github.com/inviqa/spryker-debug"
+      }
+    ]
+  },
+  {
+    "title": "Google Tag Manager integration",
+    "subtitle": "",
+    "description": "The title speaks for itself \uD83D\uDE42",
+    "tags": [],
+    "license": "MIT",
+    "creators": [{"name": "Fond Of", "url": "https://github.com/fond-of/"}],
+    "contributors": [],
+    "links": [
+      {
+        "label": "Github",
+        "url": "https://github.com/fond-of/spryker-google-tagmanager"
+      }
+    ]
+  },
+  {
+    "title": "Contentful connector",
+    "subtitle": "",
+    "description": "A Spryker-Contentful connector. Import content from contentful to storage and updates it via cronjob.",
+    "tags": [],
+    "license": "MIT",
+    "creators": [{"name": "Fond Of", "url": "https://github.com/fond-of/"}],
+    "contributors": [],
+    "links": [
+      {
+        "label": "Github",
+        "url": "https://github.com/fond-of/spryker-contentful"
+      }
+    ]
+  },
+  {
+    "title": "Novalnet B2B Payment integration",
+    "subtitle": "",
+    "description": "Novalnet payment module for Spryker simplifies your daily work by automating the entire payment process, from checkout till collection. This module is designed to help you increase your sales by offering various payment methods on a one-page checkout. The module which is perfectly adjusted to the Spryker shop with top-quality range of services of the payment provider.",
+    "tags": [],
+    "license": "Custom",
+    "creators": [{"name": "Novalnet", "url": "https://github.com/Novalnet-AG/"}],
+    "contributors": [],
+    "links": [
+      {
+        "label": "Github",
+        "url": "https://github.com/Novalnet-AG/sprykerb2b-payment-integration-novalnet"
+      }
+    ]
+  },
+  {
+    "title": "Novalnet B2C Marketplace Payment Integration",
+    "subtitle": "",
+    "description": "Novalnet payment module for Spryker simplifies your daily work by automating the entire payment process, from checkout till collection. This module is designed to help you increase your sales by offering various payment methods on a one-page checkout. The module which is perfectly adjusted to the Spryker shop with top-quality range of services of the payment provider.",
+    "tags": [],
+    "license": "Custom",
+    "creators": [{"name": "Novalnet", "url": "https://github.com/Novalnet-AG/"}],
+    "contributors": [],
+    "links": [
+      {
+        "label": "Github",
+        "url": "https://github.com/Novalnet-AG/sprykerb2c-Marketplace-payment-integration-novalnet"
+      }
+    ]
+  },
+  {
+    "title": "Codeception Module",
+    "subtitle": "",
+    "description": "This module allows developers to test spryker modules isolated.",
+    "tags": [],
+    "license": "MIT",
+    "creators": [{"name": "Fond Of", "url": "https://github.com/fond-of/"}],
+    "contributors": [],
+    "links": [
+      {
+        "label": "Github",
+        "url": "https://github.com/fond-of/codeception-spryker"
+      }
+    ]
+  },
+  {
+    "title": "Two-factor Backend Authentication",
+    "subtitle": "",
+    "description": "Second Factor Authentication for the Spryker Administration Interface",
+    "tags": [],
+    "license": "MIT",
+    "creators": [{"name": "UFirst Group"}],
+    "contributors": [],
+    "links": [
+      {
+        "label": "Github",
+        "url": "https://github.com/ufirstgroup/spryker-second-factor-auth"
+      }
+    ]
+  },
+  {
+    "title": "Jellyfish B2B Module",
+    "subtitle": "",
+    "description": "",
+    "tags": [],
+    "license": "MIT",
+    "creators": [{"name": "Fond Of", "url": "https://github.com/fond-of/"}],
+    "contributors": [],
+    "links": [
+      {
+        "label": "Github",
+        "url": "https://github.com/fond-of/spryker-jellyfish-b2b"
+      }
+    ]
+  },
+  {
+    "title": "Sentry.io integration",
+    "subtitle": "",
+    "description": "This package enables <a href=\"https://sentry.io\" rel=\"nofollow\" target=\"_blank\">Sentry.io</a> to work with your <a href=\"https://spryker.com\" target=\"_blank\">Spryker</a> shop by extending the Monitoring Module of Spryker and adding other hooks to here and there to enhance the data in Sentry.",
+    "tags": [],
+    "license": "MIT",
+    "creators": [{"name": "Turbine Kreuzberg", "url": "https://github.com/turbine-kreuzberg/"}],
+    "contributors": [],
+    "links": [
+      {
+        "label": "Github",
+        "url": "https://github.com/turbine-kreuzberg/spryker-sentry"
+      }
+    ]
+  }
+]
