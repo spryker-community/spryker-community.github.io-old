@@ -1,11 +1,11 @@
 interface CommunityToolCreatorInterface {
   name: string;
-  url: string | undefined;
+  url?: string;
 }
 
 interface CommunityToolContributorInterface {
   name: string;
-  url: string | undefined;
+  url?: string;
 }
 
 interface CommunityToolLinkInterface {
@@ -13,15 +13,16 @@ interface CommunityToolLinkInterface {
   url: string;
 }
 
-interface CommunityToolInterface {
+export interface CommunityToolInterface {
   title: string;
   subtitle: string | undefined;
   description: string;
-  tags: string[] | undefined;
-  license: string | undefined;
+  tags?: string[];
+  license: string;
   creators: CommunityToolCreatorInterface[];
   contributors: CommunityToolContributorInterface[];
   links: CommunityToolLinkInterface[];
 }
 
 export type CommunityToolCollection = CommunityToolInterface[];
+
