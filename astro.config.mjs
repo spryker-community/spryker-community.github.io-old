@@ -70,7 +70,7 @@ export default defineConfig({
       github: "https://github.com/spryker-community"
     },
     disable404Route: true,
-    customCss: ["./src/styles/starlight.css"],
+    customCss: ["./src/assets/styles/starlight.css"],
     favicon: "/favicon.ico",
     components: {
       SiteTitle: "./src/components/ui/starlight/SiteTitle.astro",
