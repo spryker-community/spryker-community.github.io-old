@@ -19,8 +19,11 @@
       "@images/*": [
         "src/images/*"
       ],
+      "@scripts/*": [
+        "src/assets/scripts/*"
+      ],
       "@styles/*": [
-        "src/styles/*"
+        "src/assets/styles/*"
       ],
       "@utils/*": [
         "src/utils/*"
