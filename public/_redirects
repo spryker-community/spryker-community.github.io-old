@@ -1,0 +1,5 @@
+# Redirects from what the browser requests to what we serve
+/discussion/*       https://forum.commercequest.space/discussion/:splat     301
+/categories/*       https://forum.commercequest.space/categories/:splat     301
+/events/*           https://forum.commercequest.space/events/:splat         301
+/events/            https://forum.commercequest.space/events/               301
