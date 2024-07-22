@@ -86,7 +86,7 @@ const starlightSidebar = getSidebar(Astro.url.pathname, Astro.props.locale);
           <!-- Navigation links component -->
           {
             strings.navBarLinks.map((link) => (
-              <NavLink url={link.url} name={link.name} submenu={link.name == "Guides" ? starlightSidebar : null}/>
+              <NavLink url={link.url} name={link.name} submenu={link.name == "Guides" ? starlightSidebar : undefined}/>
             ))
           }
         </div>

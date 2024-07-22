@@ -6,8 +6,11 @@ const { url, name, submenu } = Astro.props;
 
 // Define the interface for the sidebar entry
 interface SidebarEntry {
+  type: string;
   label: string;
   href?: string;
+  isCurrent?: boolean;
+  entries?: SidebarEntry[];
   // Add other properties as needed
 }
 
@@ -15,7 +18,7 @@ interface SidebarEntry {
 interface Props {
   url: string;
   name: string;
-  submenu?: SidebarEntry;
+  submenu?: SidebarEntry[];
 }
 ---
 
@@ -63,7 +66,7 @@ If URL is '/' (home page), assign ID as 'home'
               ">
                 {group.label}
               </span>
-              {"entries" in group ? group.entries.map((entry: SidebarEntry) => (
+              {group.entries !== undefined ? group.entries.map((entry: SidebarEntry) => (
                 <a
                   class="flex items-center gap-x-3.5 py-2 px-3 lg:px-2 rounded-lg text-sm focus:outline-none
                   text-gray-800 hover:text-gray-800 focus:text-gray-800
