@@ -5,6 +5,7 @@ const navBarLinks = [
   { name: "Extensions & Tools", url: "/community-tools" },
   { name: "Upcoming Events", url: "https://commercequest.space/events/category" },
   { name: "Event Recaps", url: "/blog" },
+  { name: "Guides", url: "/guides/intro" },
 ];
 // An array of links for footer
 const footerLinks = [
