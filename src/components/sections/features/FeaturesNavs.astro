@@ -41,21 +41,26 @@ interface Props {
           <Fragment set:html={title} />
         </h2>
         <!-- Tab navigation - use the attribute 'first' in the first TabNav for the component to work -->
-        <nav class="mt-5 grid gap-4 md:mt-10" aria-label="Tabs" role="tablist">
-          {
-            tabs.map((tab, index) => (
-              <TabNav
-                id={`tabs-with-card-item-${index + 1}`}
-                dataTab={`#tabs-with-card-${index + 1}`}
-                aria={`tabs-with-card-${index + 1}`}
-                heading={tab.heading}
-                content={tab.content}
-                first={tab.first}
-              >
-                <Icon name={tab.svg} />
-              </TabNav>
-            ))
-          }
+        <nav
+          class="mt-5 grid gap-4 md:mt-10"
+          aria-label="Tabs"
+        >
+          <div role="tablist">
+            {
+              tabs.map((tab, index) => (
+                <TabNav
+                  id={`tabs-with-card-item-${index + 1}`}
+                  dataTab={`#tabs-with-card-${index + 1}`}
+                  aria={`tabs-with-card-${index + 1}`}
+                  heading={tab.heading}
+                  content={tab.content}
+                  first={tab.first}
+                >
+                  <Icon name={tab.svg} />
+                </TabNav>
+              ))
+            }
+          </div>
         </nav>
       </div>
 
