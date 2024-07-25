@@ -13,7 +13,11 @@ const {
   imgOne,
   imgOneAlt,
   imgTwo,
+  organizer,
+  location,
   imgTwoAlt,
+  logo,
+  logoAlt
 } = Astro.props;
 // Define TypeScript interface for the properties
 interface Props {
@@ -23,10 +27,14 @@ interface Props {
   btnTitle?: string;
   btnURL?: string;
   single?: boolean;
+  location: string;
+  organizer: string;
   imgOne?: any;
   imgOneAlt?: any;
   imgTwo?: any;
   imgTwoAlt?: any;
+  logo?: any;
+  logoAlt: string | null;
 }
 ---
 <!-- Root section of the component -->
@@ -40,6 +48,18 @@ interface Props {
     >
       {title}
     </h2>
+    <!-- The organizer of the event -->
+    <p
+    class="mb-4 max-w-prose text-pretty font-light text-blue-600 dark:text-blue-100 sm:text-lg"
+  >
+    Hosted by {organizer} in {location}.
+  </p>
+    <!-- The logo image -->
+    <Image
+    class="max-h-20 w-1/4 my-6"
+    src={logo}
+    alt={logoAlt}
+  />
       <!-- description of the section -->
   <p
       class="mb-4 max-w-prose text-pretty font-light text-neutral-600 dark:text-neutral-400 sm:text-lg"
