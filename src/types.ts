@@ -13,6 +13,13 @@ interface CommunityToolLinkInterface {
   url: string;
 }
 
+export interface NavEntry {
+  label?: string;
+  href?: string;
+  isExternal?: boolean;
+  submenu?: NavEntry[] | undefined;
+}
+
 export interface CommunityToolInterface {
   title: string;
   subtitle: string | undefined;
