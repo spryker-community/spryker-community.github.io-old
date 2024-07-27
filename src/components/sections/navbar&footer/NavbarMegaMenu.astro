@@ -3,7 +3,7 @@
 import ThemeIcon from "@components/ThemeIcon.astro";
 import NavLink from "@components/ui/links/NavLink.astro";
 import MegaMenuLink from "@components/ui/links/MegaMenuLink.astro";
-import strings from "@utils/navigation.ts";
+import navigation from "@utils/navigation.ts";
 import BrandLogo from "@components/BrandLogo.astro";
 
 // Select the correct translation based on the page's lang prop:
@@ -84,11 +84,11 @@ const homeUrl = "/";
       >
         <!-- Navigation links and Authentication component -->
         {
-          strings.navBarLinks.map((link) => {
-            if (link.name === "Services") {
+          navigation.getMainNavEntries().map((navEntry) => {
+            if (navEntry.label === "Services") {
               return <MegaMenuLink />;
             } else {
-              return <NavLink url={link.url} name={link.name} />;
+              return <NavLink navEntry={navEntry} />;
             }
           })
         }

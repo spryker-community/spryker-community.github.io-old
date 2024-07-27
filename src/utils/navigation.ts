@@ -1,12 +1,7 @@
 // An array of links for navigation bar
-const navBarLinks = [
-  { name: "Home", url: "/" },
-  { name: "Forum", url: "https://commercequest.space/" },
-  { name: "Extensions & Tools", url: "/community-tools" },
-  { name: "Upcoming Events", url: "https://commercequest.space/events/category" },
-  { name: "Event Recaps", url: "/blog" },
-  { name: "Guides", url: "/guides/intro" },
-];
+import type { NavEntry } from "../types";
+import { getSidebar as getStarlightSubmenu, type SidebarEntry } from '../../node_modules/@astrojs/starlight/utils/navigation.ts';
+
 // An array of links for footer
 const footerLinks = [
   {
@@ -46,8 +41,167 @@ const socialLinks = {
   linkedin: "https://www.linkedin.com/company/spryker-systems-gmbh",
 };
 
+const mainNavigation: NavEntry[] = [
+  {
+    label: "Home",
+    href: "/"
+  },
+  {
+    label: "Forum Topics",
+    href: "https://commercequest.space/",
+    submenu: [
+      {
+        label: 'General topics',
+        submenu: [
+          {
+            label: "All Posts",
+            href: "https://commercequest.space/discussions",
+          },
+          {
+            label: "All Categories",
+            href: "https://commercequest.space/categories",
+          },
+          {
+            label: "Developer Corner",
+            href: "https://commercequest.space/categories/spryker-developers",
+          },
+          {
+            label: "Product & Business",
+            href: "https://commercequest.space/categories/business-user-questions",
+          },
+          {
+            label: "Spryker Safari",
+            href: "https://commercequest.space/categories/safari-questions",
+          },
+        ],
+      },
+      {
+        label: 'Technologies',
+        submenu: [
+          {
+            label: "Spryker",
+            href: "https://commercequest.space/categories/spryker-development",
+          },
+          {
+            label: "Oryx",
+            href: "https://commercequest.space/categories/oryx",
+          },
+          {
+            label: "Propel",
+            href: "https://commercequest.space/categories/propel-orm",
+          },
+        ],
+      },
+      {
+        label: 'Community Projects',
+        submenu: [
+          {
+            label: "News",
+            href: "https://commercequest.space/categories/spryker-news",
+          },
+          {
+            label: "Ideation Board",
+            href: "https://commercequest.space/categories/community-ideation-board",
+          },
+          {
+            label: "Hackathons",
+            href: "https://commercequest.space/categories/hackathons",
+          },
+        ],
+      },
+      {
+        label: 'Launchpad',
+        submenu: [
+          {
+            label: "Help & Guidelines",
+            href: "https://commercequest.space/categories/help-and-guidelines",
+          },
+          {
+            label: "Your CQ Suggestions",
+            href: "https://commercequest.space/categories/community-ideas-and-feedback",
+          },
+          {
+            label: "Random",
+            href: "https://commercequest.space/categories/Random/",
+          },
+          {
+            label: "Jobs",
+            href: "https://commercequest.space/categories/jobs",
+          },
+        ],
+      },
+    ]
+  },
+  {
+    label: "Extensions & Tools",
+    href: "/community-tools",
+  },
+  {
+    label: "Upcoming Events",
+    href: "https://commercequest.space/events/category",
+    submenu: [
+      {
+        submenu: [
+          {
+            label: "Upcoming Events",
+            href: "https://commercequest.space/events/category",
+          },
+          {
+            label: "Event Recaps",
+            href: "/blog",
+          },
+          {
+            label: "Organise your own event",
+            href: "#",
+          },
+        ],
+      },
+    ]
+  },
+  {
+    label: "Guides",
+    href: "/guides/intro",
+  },
+];
+
+function mapStarlightMenuToMainNavEntries(items: SidebarEntry[]): NavEntry[] {
+  return items.map(function(item): NavEntry {
+    let navEntry: NavEntry = {
+      label: item.label,
+    }
+
+    if ('entries' in item && item.entries) {
+      navEntry.submenu = mapStarlightMenuToMainNavEntries(item.entries);
+    }
+
+    if ('href' in item && item.href) {
+      navEntry.href = item.href;
+    }
+
+    return navEntry;
+  });
+}
+
+function decorateGuideSubNavigation(pathname?: string, locale?: string) {
+  const starlightSubmenu = getStarlightSubmenu(pathname || '', locale);
+
+  return mapStarlightMenuToMainNavEntries(starlightSubmenu);
+}
+
+function getMainNavEntries(pathname?: string, locale?: string): NavEntry[] {
+  return mainNavigation.map(function(entry) {
+    switch (entry.label) {
+      case 'Guides':
+        entry.submenu = decorateGuideSubNavigation(pathname, locale);
+        break;
+    }
+
+    return entry;
+  });
+}
+
 export default {
-  navBarLinks,
+  getMainNavEntries,
   footerLinks,
   socialLinks,
 };
