@@ -137,8 +137,8 @@ const mainNavigation: NavEntry[] = [
     href: "/community-tools",
   },
   {
-    label: "Upcoming Events",
-    href: "https://commercequest.space/events/category",
+    label: "Events",
+    href: "/",
     submenu: [
       {
         submenu: [
@@ -148,11 +148,11 @@ const mainNavigation: NavEntry[] = [
           },
           {
             label: "Event Recaps",
-            href: "/blog",
+            href: "/event-recap",
           },
           {
-            label: "Organise your own event",
-            href: "#",
+            label: "Organize your own event",
+            href: "/events/hackathon-blueprint",
           },
         ],
       },
