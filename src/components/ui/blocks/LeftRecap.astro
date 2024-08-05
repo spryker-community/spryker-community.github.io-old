@@ -3,17 +3,21 @@
 import { Image } from "astro:assets";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 // Destructure the props passed to the Astro component
-const { title, description, btnExists, btnTitle, btnURL, img, imgAlt } =
+const { title, description, organizer, location, btnExists, btnTitle, btnURL, img, imgAlt, logo, logoAlt } =
   Astro.props;
 // Define TypeScript interface for props
 interface Props {
   title: string;
   description: string;
+  organizer: string;
+  location: string;
   btnExists?: boolean;
   btnTitle?: string;
   btnURL?: string;
   img: any;
   imgAlt: any;
+  logo?: any;
+  logoAlt: string;
 }
 ---
 
@@ -37,6 +41,18 @@ interface Props {
     >
       {title}
     </h2>
+    <!-- The organizer of the event -->
+    <p
+    class="mb-4 max-w-prose text-pretty font-light text-neutral-600 dark:text-blue-100 sm:text-lg"
+  >
+    Hosted by {organizer} in {location}.
+  </p>
+  <!-- The logo image -->
+  <Image
+    class="max-h-20 w-1/4 my-6"
+    src={logo}
+    alt={logoAlt}
+  />
   <p
     class="mb-4 max-w-prose text-pretty font-light text-neutral-600 dark:text-neutral-400 sm:text-lg"
   >

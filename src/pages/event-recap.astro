@@ -1,0 +1,226 @@
+---
+// Import necessary components
+import MainLayout from "@/layouts/MainLayout.astro";
+import MainSection from "@components/ui/blocks/MainSection.astro";
+import LeftRecap from "@components/ui/blocks/LeftRecap.astro";
+import RightRecap from "@components/ui/blocks/RightRecap.astro";
+import FeaturesStats from "@components/sections/features/FeaturesStats.astro";
+
+// Import necessary images
+import blueprints from "@images/blueprints-image.avif";
+import personWorking from "@images/person-working.avif";
+import beforeAfter from "@images/before-after.avif";
+import constructionWorkers from "@images/construction-workers.avif";
+import aerialView from "@images/aerial-view.avif";
+import usingTools from "@images/using-tools.avif";
+import sprykerOskar from "@images/spryker-oskar.png";
+import exciteStage from "@images/excite-stage.png";
+import nagarro from "@images/recaps/nagarro.png";
+import spryker from "@images/recaps/spryker.png";
+import turbine from "@images/recaps/turbine.png";
+import delhi1 from "@images/recaps/delhi1.jpg";
+import delhi2 from "@images/recaps/delhi2.avif";
+import tk1 from "@images/recaps/20240514_110027.jpg";
+import propelAutocompletion from "@images/propelAutocompletion.png";
+import { SITE } from "@data/constants";
+
+interface Event {
+  isRightRecap: boolean;
+  title: string;
+  description: string;
+  theme: string;
+  location: string;
+  organizer: string;
+  btnExists?: boolean;
+  btnTitle?: string;
+  btnURL?: string;
+  single?: boolean;
+  logo?: any;
+  logoAlt?: string;
+  img?: any;
+  imgAlt?: string;
+  imgOne?: any;
+  imgOneAlt?: string;
+  imgTwo?: any;
+  imgTwoAlt?: string;
+}
+
+const events: Event[] = [
+  {
+    isRightRecap: true,
+    title: "Hackathon August 2024",
+    description:
+      "At the Nagarro hackathon, teams worked on new, green initiatives, powered by AI.",
+    theme: "Green Energy & AI",
+    location: "Delhi, India",
+    organizer: "Nagarro",
+    single: false,
+    imgOne: delhi1,
+    imgOneAlt: "Blueprints and digital tablet with construction plans.",
+    imgTwo: delhi2,
+    imgTwoAlt: "Person working in the office",
+    logo: nagarro,
+    logoAlt: "Nagarro",
+  },
+  {
+    isRightRecap: false,
+    title: "Hackathon May 2024",
+    description:
+      "Placeholder description of this event. Hackathons are a great way to learn, network, and collaborate with like-minded individuals.",
+    theme: "Security",
+    location: "Berlin, Germany",
+    organizer: "Turbine Kreuzberg",
+    img: tk1,
+    imgAlt: "Turbine Kreuzberg Hackathon",
+    btnExists: false,
+    btnTitle: "Propel Documentation on PropelORM.org",
+    btnURL: "/",
+    logo: turbine,
+    logoAlt: "Turbine Kreuzberg",
+  },
+  {
+    isRightRecap: true,
+    title: "Hackathon March 2024",
+    description:
+      "Placeholder description of this event. Hackathons are a great way to learn, network, and collaborate with like-minded individuals.",
+    theme: "Double your development speed",
+    location: "Berlin, Germany",
+    organizer: "Spryker",
+    single: false,
+    imgOne: constructionWorkers,
+    imgOneAlt: "Construction workers orchestrating a project",
+    imgTwo: aerialView,
+    imgTwoAlt: "Aerial view of managed construction",
+    logo: spryker,
+    logoAlt: "Spryker",
+  },
+  {
+    isRightRecap: false,
+    title: "Hackathon September 2023",
+    description:
+      "Placeholder description of this event. Hackathons are a great way to learn, network, and collaborate with like-minded individuals.",
+    theme: "Frontend development with Oryx",
+    location: "Berlin, Germany",
+    organizer: "Spryker",
+    img: usingTools,
+    imgAlt:
+      "Man in orange and black vest wearing white helmet holding yellow and black power tool",
+    logo: spryker,
+    logoAlt: "Spryker",
+  },
+  {
+    isRightRecap: true,
+    title: "EXCITE Developer Stage 2023",
+    description:
+      "Placeholder description of this event. Hackathons are a great way to learn, network, and collaborate with like-minded individuals.",
+    single: false,
+    theme: "Frontend development with Oryx",
+    location: "Berlin, Germany",
+    organizer: "Spryker",
+    imgOne: sprykerOskar,
+    imgOneAlt: "Oskar, the Spryker Mascot.",
+    imgTwo: exciteStage,
+    imgTwoAlt: "Guido and Yara on stage at Spryker EXCITE 2023",
+    btnExists: true,
+    btnTitle: "Register for EXCITE 2024",
+    btnURL: "https://spryker.com/events/excite-2024/",
+    logo: spryker,
+    logoAlt: "Spryker",
+  },
+];
+
+const pageTitle: string = `Event Recaps | ${SITE.title}`;
+---
+
+<MainLayout
+  title={pageTitle}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://commercequest.space/",
+    "url": "https://commercequest.space/",
+    "name": "Hack, Build, Win. | CommerceQuest",
+    "description": "Commerce Resources for the driven Spryker, Propel & Oryx developer.",
+    "isPartOf": {
+        "@type": "WebSite",
+        "url": "https://commercequest.space/",
+        "name": "CommerceQuest",
+        "description": "Commerce Resources for the driven Spryker, Propel & Oryx developer."
+    },
+    "inLanguage": "en-US"
+  }}
+>
+  <!--MainSection is the introductory section of the page, it also contains a CTA button-->
+  <MainSection
+    title="CommerceQuest Event Recaps"
+    subTitle="We and our community partners regularly organize events, hackathons and meetups to bring together software developers, engineers and architects. These events are a great opportunity to learn, network, and collaborate with like-minded individuals. Check out our event recaps below to learn more about our past events or click the button below toe view upcoming events."
+    btnExists={true}
+    btnTitle="Upcoming Events"
+    btnURL="https://forum.commercequest.space/events/category"
+  />
+  <!-- RightRecap and LeftRecap contain details about various services along with pertinent imagery.
+  They alternate for variety in design.
+  The 'btnExists' property is used to toggle the display of a button in these sections.
+  When btnExists={true}, a button is displayed.
+  This can be used to link to more detailed information or related resources.
+  RightRecap can also conditionally render one or two images based on the 'single' property.
+  If 'single' is true, it displays one image, otherwise it displays two.
+  -->
+  {
+    events.map(event => {
+      return event.isRightRecap ? (
+        <RightRecap
+          title={event.title}
+          description={event.description}
+          single={event.single}
+          imgOne={event.imgOne}
+          imgOneAlt={event.imgOneAlt}
+          imgTwo={event.imgTwo}
+          imgTwoAlt={event.imgTwoAlt}
+          btnExists={event.btnExists}
+          btnTitle={event.btnTitle}
+          btnURL={event.btnURL}
+          location={event.location}
+          organizer={event.organizer}
+          logo={event.logo}
+          logoAlt={event.logoAlt ?? ""}
+        />
+      ) : (
+        <LeftRecap
+          title={event.title}
+          description={event.description}
+          img={event.img}
+          imgAlt={event.imgAlt}
+          btnExists={event.btnExists}
+          btnTitle={event.btnTitle}
+          btnURL={event.btnURL}
+          organizer={event.organizer}
+          location={event.location}
+          logo={event.logo}
+          logoAlt={event.logoAlt ?? ""}
+        />
+      );
+    })
+  }
+  <!--FeaturesStats section showcases essential stats valuable to users-->
+  <!-- <FeaturesStats
+    title="By the Numbers"
+    subTitle="Our commitment to quality and reliability is evident in every project we undertake. At CommerceQuest, we are dedicated to delivering industry-leading services that ensure your construction projects are built to last."
+    mainStatTitle="4.3 / 5"
+    mainStatSubTitle="Gartner Peer Insights rating"
+    stats={[
+      {
+        stat: "150+",
+        description: "global customers",
+      },
+      {
+        stat: "50+",
+        description: "nationalities in our talented global herd.",
+      },
+      {
+        stat: "Top 100",
+        description: "Flexible Employers 2023 by Jobgether",
+      },
+    ]}
+  /> -->
+</MainLayout>

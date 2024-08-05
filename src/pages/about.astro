@@ -20,7 +20,7 @@ import { SITE } from "@data/constants";
 interface Article {
   isRightSection: boolean;
   title: string;
-  subTitle: string;
+  description: string;
   btnExists?: boolean;
   btnTitle?: string;
   btnURL?: string;
@@ -37,7 +37,7 @@ const articles: Article[] = [
   {
     isRightSection: true,
     title: "Flourishing Forums",
-    subTitle:
+    description:
       "Our Discussion Forum is the go-to place for Spryker, Oryx and Propel developers seeking peer-to-peer support and collaboration. Here, you can search through past discussions to find solutions to common challenges, post your own questions or requests for assistance, and benefit from the collective knowledge of the community. Additionally, the forum features the latest community news & announcements and allows you to directly RSVP to upcoming community events.",
     single: false,
     imgOne: devCorner,
@@ -51,7 +51,7 @@ const articles: Article[] = [
   {
     isRightSection: false,
     title: "Monthly Meetups",
-    subTitle:
+    description:
       "Our Monthly Meetups are held online during the last week of every month, providing a regular touchpoint for our developer community. These virtual sessions feature presentations and discussions led by experts and community members, covering a broad spectrum of topics. Whether you’re interested in the latest platform updates, best practices, or innovative use cases, the Monthly Meetup offers a valuable opportunity to stay informed, engage with peers, and deepen your expertise.",
     img: ugfeb2024,
     imgAlt: "Screenshot of our Februari 2024 meetup",
@@ -62,7 +62,7 @@ const articles: Article[] = [
   {
     isRightSection: true,
     title: "Hands-on Hackathons",
-    subTitle:
+    description:
       "Hackathons are dynamic, high-energy events held 5-8 times a year, organized either by CommerceQuest or one of our partners at their offices. These 1-3 day sessions bring together developers to collaborate in teams of 3-5, working intensively to create a working MVP / POC. At the end of each hackathon, teams present their solutions, which are then published in a community GitHub repository under the MIT license. This ensures that everyone in the community can benefit from and build upon the innovative work produced. Hackathons are an excellent opportunity to test your skills, learn from peers, and contribute meaningful code to the community.",
     single: false,
     imgOne: hackathon2,
@@ -76,7 +76,7 @@ const articles: Article[] = [
   {
     isRightSection: false,
     title: "Ultimate Unconferences",
-    subTitle:
+    description:
       "Unconferences are held twice a year in exciting and engaging locations, designed to spark both learning and networking among Spryker developers. Unlike traditional conferences, these events are participant-driven, allowing attendees to shape the agenda and lead discussions on topics they are passionate about. This format fosters open, dynamic exchanges of ideas and experiences, making each unconference a unique and valuable experience. Join us to connect with fellow developers, gain fresh insights, and contribute to the vibrant Spryker community in a relaxed, informal setting.",
     img: demo,
     imgAlt:
@@ -88,7 +88,7 @@ const articles: Article[] = [
   {
     isRightSection: true,
     title: "Developer Stage @ Spryker EXCITE",
-    subTitle:
+    description:
       "The Developer Stage at the annual Spryker EXCITE event in Berlin is the focal point for cutting-edge discussions and presentations tailored specifically for our developer community. Curated by the Spryker Engineering and Community Team, this track features the latest and most impactful topics, with speakers often sourced from our meetups, hackathons, and unconferences. Attendees can expect to dive deep into advanced technical content, hear firsthand experiences from their peers, and engage in lively discussions about the future of e-commerce technology.",
     single: false,
     imgOne: sprykerOskar,
@@ -145,7 +145,7 @@ const pageTitle: string = `About | ${SITE.title}`;
       return article.isRightSection ? (
         <RightSection
           title={article.title}
-          subTitle={article.subTitle}
+          description={article.description}
           single={article.single}
           imgOne={article.imgOne}
           imgOneAlt={article.imgOneAlt}
@@ -158,7 +158,7 @@ const pageTitle: string = `About | ${SITE.title}`;
       ) : (
         <LeftSection
           title={article.title}
-          subTitle={article.subTitle}
+          description={article.description}
           img={article.img}
           imgAlt={article.imgAlt}
           btnExists={article.btnExists}
