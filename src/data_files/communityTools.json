@@ -168,5 +168,50 @@
         "url": "https://github.com/turbine-kreuzberg/spryker-sentry"
       }
     ]
+  },
+  {
+    "title": "CLI Toolkit",
+    "subtitle": "Spryker Community CLI Toolkit",
+    "description": "A suite of utilities designed to enhance performance in your day-to-day operations with Spryker Commerce OS.",
+    "tags": [],
+    "license": "MIT",
+    "creators": [{"name": "Community", "url": "https://commercequest.space/categories/spryker-community-projects"}],
+    "contributors": [],
+    "links": [
+      {
+        "label": "Github",
+        "url": "https://github.com/spryker-community/cli-toolkit"
+      }
+    ]
+  },
+  {
+    "title": "i18n Translations",
+    "subtitle": "",
+    "description": "Adds support for multiple languages to Spryker OS",
+    "tags": [],
+    "license": "MIT",
+    "creators": [{"name": "Community", "url": "https://commercequest.space/categories/spryker-community-projects"}],
+    "contributors": [],
+    "links": [
+      {
+        "label": "Github",
+        "url": "https://github.com/spryker-community/spryker-translations"
+      }
+    ]
+  },
+  {
+    "title": "ProductManagementAiTranslator Module",
+    "subtitle": "",
+    "description": "This module provides product-related AI translation functionality.",
+    "tags": [],
+    "license": "MIT",
+    "creators": [{"name": "Community", "url": "https://commercequest.space/categories/spryker-community-projects"}],
+    "contributors": [],
+    "links": [
+      {
+        "label": "Github",
+        "url": "https://github.com/spryker-community/product-management-ai-translator"
+      }
+    ]
   }
 ]

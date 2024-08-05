@@ -1,43 +1,31 @@
 ---
-// Destructure the properties from Astro.props
-
-import MegaMenuLink from "./MegaMenuLink.astro";
-const { url, name, submenu } = Astro.props;
-
-// Define the interface for the sidebar entry
-interface SidebarEntry {
-  type: string;
-  label: string;
-  href?: string;
-  isCurrent?: boolean;
-  entries?: SidebarEntry[];
-  // Add other properties as needed
-}
+import type { NavEntry as NavEntryInterface } from "../../../types";
 
 // Define TypeScript interface for the properties
 interface Props {
-  url: string;
-  name: string;
-  submenu?: SidebarEntry[];
+  navEntry: NavEntryInterface,
 }
+
+// Destructure the properties from Astro.props
+const { navEntry } = Astro.props;
 ---
 
 <!--
 Re-usable link component for navigation bar. Highlights the active link
 by comparing the current URL with the href of each link.
 We assign an ID matching the URL for easy reference in our script.
-If URL is '/' (home page), assign ID as 'home' 
+If URL is '/' (home page), assign ID as 'home'
 -->
 {
-  (submenu) ? (
-  <div class="hs-dropdown [--strategy:static] lg:[--strategy:absolute] lg:[--trigger:hover] [--adaptive:none]">
+  ('submenu' in navEntry && navEntry.submenu) ? (
+  <div class="hs-dropdown [--strategy:static] lg:[--strategy:absolute] lg:[--trigger:hover] [--adaptive:none] lg:flex lg:h-full">
     <a type="button"
        class="hs-dropdown-toggle
     flex relative select-none whitespace-nowrap items-center lg:justify-center lg:self-center min-h-9 px-2 text-sm no-underline rounded-md
     dark:text-neutral-300 hover:dark:bg-white/10
     lg:after:absolute lg:after:w-full lg:after:max-w-10 lg:after:h-1 lg:after:top-[calc(50%-3px)] lg:after:left-2/4 lg:after:mx-0 lg:after:-translate-x-2/4 lg:after:translate-y-10 lg:after:content-[''] lg:hover:after:dark:bg-neutral-300
     ">
-      {name}
+      {navEntry.label}
       <svg
         class="size-4 hs-dropdown-open:rotate-180"
         width="24"
@@ -55,18 +43,22 @@ If URL is '/' (home page), assign ID as 'home'
     w-full hidden z-10 top-full start-0 min-w-60 bg-white lg:shadow-2xl py-2 lg:p-4
     border-b-2 bg-blue-50/100 dark:border-cqDarkPrimary-100/40 dark:bg-cqDarkPrimary-300/100
     before:absolute before:-top-5 before:start-0 before:w-full before:h-5">
-      <div class="flex flex-col lg:flex-row justify-center w-full max-w-7xl mx-auto px-4 lg:px-16 gap-4">
+      <div class="flex flex-col lg:flex-row justify-start w-full max-w-7xl mx-auto px-4 lg:pl-64 lg:pr-16 gap-4">
 
         {
-          submenu.map((group) => (
+          navEntry.submenu.map((submenuEntry) => (
             <!-- BEGIN COLUMN -->
             <div class="flex flex-col mx-1 md:mx-0">
-              <span class="block py-2 px-2 text-sm font-bold dark:focus:outline-none
-              text-neutral-600 dark:text-neutral-300
-              ">
-                {group.label}
-              </span>
-              {group.entries !== undefined ? group.entries.map((entry: SidebarEntry) => (
+              {(!submenuEntry.href) && (
+                <span class="block py-2 px-2 text-sm font-bold dark:focus:outline-none
+                text-neutral-600 dark:text-neutral-300
+                ">
+                  {submenuEntry.label}
+                </span>
+              )}
+              {('submenu' in submenuEntry) && submenuEntry.submenu !== undefined ? submenuEntry.submenu.map((entry) => (
+
+                ('href' in entry) && (
                 <a
                   class="flex items-center gap-x-3.5 py-2 px-3 lg:px-2 rounded-lg text-sm focus:outline-none
                   text-gray-800 hover:text-gray-800 focus:text-gray-800
@@ -74,6 +66,7 @@ If URL is '/' (home page), assign ID as 'home'
                   href={entry.href || '#'}>
                   {entry.label}
                 </a>
+                )
               )) : ''}
             </div>
             <!-- END COLUMN -->
@@ -84,15 +77,17 @@ If URL is '/' (home page), assign ID as 'home'
     </div>
   </div>
   ) : (
-  <a
-    id={url === "/" ? "home" : url.replace("/", "")}
-    href={url}
-    data-astro-prefetch
-    class="
-  flex relative select-none whitespace-nowrap items-center lg:justify-center lg:self-center min-h-9 px-2 text-sm no-underline rounded-md
-  dark:text-neutral-300 hover:dark:bg-white/10
-  lg:after:absolute lg:after:w-full lg:after:max-w-10 lg:after:h-1 lg:after:top-[calc(50%-3px)] lg:after:left-2/4 lg:after:mx-0 lg:after:-translate-x-2/4 lg:after:translate-y-10 lg:after:content-[''] lg:hover:after:dark:bg-neutral-300
-  ">{name}</a>
+    (navEntry.href) && (
+      <a
+        id={navEntry.href === "/" ? "home" : navEntry.href.replace("/", "")}
+        href={navEntry.href}
+        data-astro-prefetch
+        class="
+      flex relative select-none whitespace-nowrap items-center lg:justify-center lg:self-center min-h-9 px-2 text-sm no-underline rounded-md
+      dark:text-neutral-300 hover:dark:bg-white/10
+      lg:after:absolute lg:after:w-full lg:after:max-w-10 lg:after:h-1 lg:after:top-[calc(50%-3px)] lg:after:left-2/4 lg:after:mx-0 lg:after:-translate-x-2/4 lg:after:translate-y-10 lg:after:content-[''] lg:hover:after:dark:bg-neutral-300
+      ">{navEntry.label}</a>
+    )
   )
  }
 

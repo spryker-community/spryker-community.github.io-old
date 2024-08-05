@@ -2,11 +2,8 @@
 //Import relevant dependencies
 import ThemeIcon from "@components/ThemeIcon.astro";
 import NavLink from "@components/ui/links/NavLink.astro";
-import strings from "@utils/navigation.ts";
+import navigation from "@utils/navigation.ts";
 import BrandLogo from "@components/BrandLogo.astro";
-import { getSidebar } from '../../../../node_modules/@astrojs/starlight/utils/navigation.ts';
-
-const starlightSidebar = getSidebar(Astro.url.pathname, Astro.props.locale);
 ---
 
 <!-- Main header component -->
@@ -81,12 +78,12 @@ const starlightSidebar = getSidebar(Astro.url.pathname, Astro.props.locale);
       >
         <!-- Navigation links container -->
         <div
-          class="mt-5 flex flex-col gap-x-0 gap-y-4 lg:mt-0 lg:flex-row lg:items-center justify-start lg:justify-end lg:gap-x-4 lg:gap-y-0 lg:ps-7"
+          class="mt-5 flex flex-col gap-x-0 gap-y-4 lg:mt-0 lg:flex-row lg:items-center justify-start lg:justify-end lg:gap-x-4 lg:gap-y-0 lg:ps-[16px]"
         >
           <!-- Navigation links component -->
           {
-            strings.navBarLinks.map((link) => (
-              <NavLink url={link.url} name={link.name} submenu={link.name == "Guides" ? starlightSidebar : undefined}/>
+            navigation.getMainNavEntries(Astro.url.pathname, Astro.props.locale).map((navEntry) => (
+              <NavLink navEntry={navEntry} />
             ))
           }
         </div>
