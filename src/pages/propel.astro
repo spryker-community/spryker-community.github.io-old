@@ -20,7 +20,7 @@ import { SITE } from "@data/constants";
 interface Article {
   isRightSection: boolean;
   title: string;
-  subTitle: string;
+  description: string;
   btnExists?: boolean;
   btnTitle?: string;
   btnURL?: string;
@@ -37,7 +37,7 @@ const articles: Article[] = [
   // {
   //   isRightSection: true,
   //   title: "Delivering Expert Guidance",
-  //   subTitle:
+  //   description:
   //     "Embarking on a construction project can be overwhelming. With our professional consultation services, we guide you through every stage, ensuring you make informed decisions. Whether you are a DIY enthusiast or a skilled contractor, our experts are on hand to offer tailored advice on product selection, project scope, and compliance with local regulations.",
   //   single: false,
   //   imgOne: blueprints,
@@ -48,7 +48,7 @@ const articles: Article[] = [
   {
     isRightSection: false,
     title: "Propel Documentation: we got you!",
-    subTitle:
+    description:
       "Our extensive Propel documentation is your go-to resource for mastering this powerful ORM. With detailed guides, practical examples, and troubleshooting tips, you’ll quickly learn everything from basic setup to advanced database management. Streamline your development process with our comprehensive resources!",
     img: propelAutocompletion,
     imgAlt: "Propel Code",
@@ -59,7 +59,7 @@ const articles: Article[] = [
   // {
   //   isRightSection: true,
   //   title: "Navigating Projects with Professional Oversight",
-  //   subTitle:
+  //   description:
   //     "Effective project management is at the heart of any successful build. CommerceQuest provides thorough planning and robust management services that keep your project on time and within budget. Let us handle the complexities of workflow coordination, resource allocation, and stakeholder communication while you focus on your vision.",
   //   single: false,
   //   imgOne: constructionWorkers,
@@ -70,7 +70,7 @@ const articles: Article[] = [
   // {
   //   isRightSection: false,
   //   title: "Ensuring Long-lasting Performance",
-  //   subTitle:
+  //   description:
   //     "Our commitment to your project doesn't end at completion. CommerceQuest offers ongoing maintenance and support services to ensure your construction's longevity and performance. From regular check-ups to emergency assistance, our responsive team is there to provide seamless support.",
   //   img: usingTools,
   //   imgAlt:
@@ -79,7 +79,7 @@ const articles: Article[] = [
   // {
   //   isRightSection: true,
   //   title: "About Spryker",
-  //   subTitle:
+  //   description:
   //     "Spryker is the leading composable commerce platform for enterprises with sophisticated business models to enable growth, innovation, and differentiation. Designed specifically for sophisticated transactional business, Spryker’s easy-to-use, headless, API-first model offers a best-of-breed approach that provides businesses the flexibility to adapt, scale, and quickly go to market while facilitating faster time-to-value throughout their digital transformation journey. As a global platform leader for B2B and B2C Enterprise Marketplaces, Thing Commerce, and Unified Commerce, Spryker has empowered 150+ global enterprise customers worldwide and is trusted by brands such as ALDI, Siemens, Hilti, and Ricoh. Spryker was recognized by Gartner® as a Visionary in the 2023 Magic Quadrant™ for Digital Commerce and was also ranked as a Strong Performer in The Forrester Wave™: B2B Commerce Solutions, Q2 2022. Spryker is a privately held technology company headquartered in Berlin and New York. Find out more at spryker.com",
   //   single: false,
   //   imgOne: sprykerOskar,
@@ -116,7 +116,7 @@ const pageTitle: string = `Propel | ${SITE.title}`;
   <!--MainSection is the introductory section of the page, it also contains a CTA button-->
   <MainSection
     title="Master Database Management with Propel"
-    subTitle="Welcome to the Propel community on CommerceQuest! Propel is an open-source ORM for PHP8 that simplifies database interactions, making your development process more efficient and enjoyable. Beyond its ORM capabilities, Propel offers a powerful query-builder, seamless database schema migrations, and even reverse engineering of existing databases. Connect with other Propel users, share insights, and tap into our community code repositories and forums for support. Propel is your trusty companion for robust database management and development!"
+    description="Welcome to the Propel community on CommerceQuest! Propel is an open-source ORM for PHP8 that simplifies database interactions, making your development process more efficient and enjoyable. Beyond its ORM capabilities, Propel offers a powerful query-builder, seamless database schema migrations, and even reverse engineering of existing databases. Connect with other Propel users, share insights, and tap into our community code repositories and forums for support. Propel is your trusty companion for robust database management and development!"
     btnExists={true}
     btnTitle="Discuss on our dedicated Propel subforum"
     btnURL="https://commercequest.space/categories/propel-orm"
@@ -134,7 +134,7 @@ const pageTitle: string = `Propel | ${SITE.title}`;
       return article.isRightSection ? (
         <RightSection
           title={article.title}
-          subTitle={article.subTitle}
+          description={article.description}
           single={article.single}
           imgOne={article.imgOne}
           imgOneAlt={article.imgOneAlt}
@@ -147,7 +147,7 @@ const pageTitle: string = `Propel | ${SITE.title}`;
       ) : (
         <LeftSection
           title={article.title}
-          subTitle={article.subTitle}
+          description={article.description}
           img={article.img}
           imgAlt={article.imgAlt}
           btnExists={article.btnExists}
@@ -160,7 +160,7 @@ const pageTitle: string = `Propel | ${SITE.title}`;
   <!--FeaturesStats section showcases essential stats valuable to users-->
   <!-- <FeaturesStats
     title="By the Numbers"
-    subTitle="Our commitment to quality and reliability is evident in every project we undertake. At CommerceQuest, we are dedicated to delivering industry-leading services that ensure your construction projects are built to last."
+    description="Our commitment to quality and reliability is evident in every project we undertake. At CommerceQuest, we are dedicated to delivering industry-leading services that ensure your construction projects are built to last."
     mainStatTitle="4.3 / 5"
     mainStatSubTitle="Gartner Peer Insights rating"
     stats={[
