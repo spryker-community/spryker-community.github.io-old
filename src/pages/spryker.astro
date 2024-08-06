@@ -24,7 +24,7 @@ import { SITE } from "@data/constants";
 interface Article {
   isRightSection: boolean;
   title: string;
-  subTitle: string;
+  description: string;
   btnExists?: boolean;
   btnTitle?: string;
   btnURL?: string;
@@ -55,7 +55,7 @@ const articles: Article[] = [
   {
     isRightSection: true,
     title: "Delivering Expert Guidance",
-    subTitle:
+    description:
       "Embarking on a construction project can be overwhelming. With our professional consultation services, we guide you through every stage, ensuring you make informed decisions. Whether you are a DIY enthusiast or a skilled contractor, our experts are on hand to offer tailored advice on product selection, project scope, and compliance with local regulations.",
     single: false,
     imgOne: blueprints,
@@ -66,7 +66,7 @@ const articles: Article[] = [
   {
     isRightSection: false,
     title: "Transforming Designs into Reality",
-    subTitle:
+    description:
       "Our skilled craftsmen bring precision and excellence to every construction project. From minor installations to substantial structural work, CommerceQuest offers reliable construction services to turn your plans into tangible outcomes. We ensure the highest standards of safety and workmanship, utilizing top-quality tools and materials from our extensive inventory.",
     img: beforeAfter,
     imgAlt: "Construction site before and after",
@@ -77,7 +77,7 @@ const articles: Article[] = [
   {
     isRightSection: true,
     title: "Navigating Projects with Professional Oversight",
-    subTitle:
+    description:
       "Effective project management is at the heart of any successful build. CommerceQuest provides thorough planning and robust management services that keep your project on time and within budget. Let us handle the complexities of workflow coordination, resource allocation, and stakeholder communication while you focus on your vision.",
     single: false,
     imgOne: constructionWorkers,
@@ -88,7 +88,7 @@ const articles: Article[] = [
   {
     isRightSection: false,
     title: "Ensuring Long-lasting Performance",
-    subTitle:
+    description:
       "Our commitment to your project doesn't end at completion. CommerceQuest offers ongoing maintenance and support services to ensure your construction's longevity and performance. From regular check-ups to emergency assistance, our responsive team is there to provide seamless support.",
     img: usingTools,
     imgAlt:
@@ -97,7 +97,7 @@ const articles: Article[] = [
   {
     isRightSection: true,
     title: "About Spryker",
-    subTitle:
+    description:
       "Spryker is the leading composable commerce platform for enterprises with sophisticated business models to enable growth, innovation, and differentiation. Designed specifically for sophisticated transactional business, Spryker’s easy-to-use, headless, API-first model offers a best-of-breed approach that provides businesses the flexibility to adapt, scale, and quickly go to market while facilitating faster time-to-value throughout their digital transformation journey. As a global platform leader for B2B and B2C Enterprise Marketplaces, Thing Commerce, and Unified Commerce, Spryker has empowered 150+ global enterprise customers worldwide and is trusted by brands such as ALDI, Siemens, Hilti, and Ricoh. Spryker was recognized by Gartner® as a Visionary in the 2023 Magic Quadrant™ for Digital Commerce and was also ranked as a Strong Performer in The Forrester Wave™: B2B Commerce Solutions, Q2 2022. Spryker is a privately held technology company headquartered in Berlin and New York. Find out more at spryker.com",
     single: false,
     imgOne: sprykerOskar,
@@ -168,7 +168,7 @@ const pageTitle: string = `Spryker | ${SITE.title}`;
   <!--MainSection is the introductory section of the page, it also contains a CTA button-->
   <MainSection
     title="Empower Your E-Commerce with Spryker"
-    subTitle="Spryker is a robust and flexible composable commerce solution that empowers developers to create tailored and scalable online experiences. With its modular architecture and seamless API integrations, Spryker remains the go-to platform for innovative and dynamic e-commerce solutions. Here, you can connect with fellow Spryker developers, explore community-driven projects, and find support in our code repositories and forums. Dive in and see how Spryker can help you take your e-commerce initiatives to the next level!"
+    description="Spryker is a robust and flexible composable commerce solution that empowers developers to create tailored and scalable online experiences. With its modular architecture and seamless API integrations, Spryker remains the go-to platform for innovative and dynamic e-commerce solutions. Here, you can connect with fellow Spryker developers, explore community-driven projects, and find support in our code repositories and forums. Dive in and see how Spryker can help you take your e-commerce initiatives to the next level!"
     btnExists={true}
     btnTitle="Discuss on our dedicated Spryker subforum"
     btnURL="https://commercequest.space/categories/spryker-development"
@@ -186,7 +186,7 @@ const pageTitle: string = `Spryker | ${SITE.title}`;
       return article.isRightSection ? (
         <RightSection
           title={article.title}
-          subTitle={article.subTitle}
+          description={article.description}
           single={article.single}
           imgOne={article.imgOne}
           imgOneAlt={article.imgOneAlt}
@@ -199,7 +199,7 @@ const pageTitle: string = `Spryker | ${SITE.title}`;
       ) : (
         <LeftSection
           title={article.title}
-          subTitle={article.subTitle}
+          description={article.description}
           img={article.img}
           imgAlt={article.imgAlt}
           btnExists={article.btnExists}
