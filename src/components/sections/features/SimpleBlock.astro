@@ -7,7 +7,7 @@ import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
 // Define props from Astro
 const {
   title,
-  subTitle,
+  description,
   content,
   secondaryBtn,
   secondaryBtnURL,
@@ -16,7 +16,7 @@ const {
   // Define TypeScript interface for props
 interface Props {
   title?: string;
-  subTitle?: string;
+  description?: string;
   content: string;
   secondaryBtn?: string;
   secondaryBtnURL?: string;
@@ -36,11 +36,11 @@ interface Props {
       {title}
     </h2>
     <!-- Subtitle -->
-    {subTitle &&
+    {description &&
     <h3
       class="mb-5 max-w-prose text-pretty font-bold text-neutral-700 dark:text-neutral-300 sm:text-xl"
     >
-      {subTitle}
+      {description}
     </h3>
     }
     <!-- Content -->
