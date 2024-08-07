@@ -10,16 +10,16 @@ import FeaturesStats from "@components/sections/features/FeaturesStats.astro";
 import blueprints from "@images/blueprints-image.avif";
 import personWorking from "@images/person-working.avif";
 import beforeAfter from "@images/before-after.avif";
-import constructionWorkers from "@images/construction-workers.avif";
-import aerialView from "@images/aerial-view.avif";
-import usingTools from "@images/using-tools.avif";
-import sprykerOskar from "@images/spryker-oskar.png";
-import exciteStage from "@images/excite-stage.png";
+import marchWinners from "@images/recaps/march-winners.jpg";
+import marchPaperplane from "@images/recaps/march-paperplane.jpg";
+import hack2023 from "@images/recaps/hack2023.jpg";
+import ready from "@images/SPRYKER_EXCITE_2023-77.jpg";
+import denis from "@images/recaps/denis.jpg";
 import nagarro from "@images/recaps/nagarro.png";
 import spryker from "@images/recaps/spryker.png";
 import turbine from "@images/recaps/turbine.png";
-import delhi1 from "@images/recaps/delhi1.jpg";
-import delhi2 from "@images/recaps/delhi2.avif";
+import delhi1 from "@images/recaps/nagarro-demo.jpg";
+import delhi2 from "@images/recaps/nagarro-4.jpg";
 import tk1 from "@images/recaps/20240514_110027.jpg";
 import propelAutocompletion from "@images/propelAutocompletion.png";
 import { SITE } from "@data/constants";
@@ -31,6 +31,7 @@ interface Event {
   theme: string;
   location: string;
   organizer: string;
+  github?: string;
   btnExists?: boolean;
   btnTitle?: string;
   btnURL?: string;
@@ -43,6 +44,9 @@ interface Event {
   imgOneAlt?: string;
   imgTwo?: any;
   imgTwoAlt?: string;
+  githubExists?: boolean;
+  youtubeExists?: boolean;
+  youtube?: string;
 }
 
 const events: Event[] = [
@@ -50,7 +54,7 @@ const events: Event[] = [
     isRightRecap: true,
     title: "Hackathon August 2024",
     description:
-      "At the Nagarro hackathon, teams worked on new, green initiatives, powered by AI.",
+      "At the Nagarro hackathon, 5 teams worked on providing conssumers with more sustainable options by incorporating CO² emission data into the product data, make search results sort on this data, suggest more sustainable products on the PDP and create a rewards system nudging customers to make better purchase decisions.",
     theme: "Green Energy & AI",
     location: "Delhi, India",
     organizer: "Nagarro",
@@ -61,12 +65,16 @@ const events: Event[] = [
     imgTwoAlt: "Person working in the office",
     logo: nagarro,
     logoAlt: "Nagarro",
+    githubExists: true,
+    github: "https://github.com/orgs/spryker-community/repositories?q=nagarro",
+    youtubeExists: true,
+    youtube: "https://www.youtube.com/watch?v=8YcPl5hjV2Y&list=PLJooqCSo73SiCupw9Xtj8-6vUERAxpdk_"
   },
   {
     isRightRecap: false,
     title: "Hackathon May 2024",
     description:
-      "Placeholder description of this event. Hackathons are a great way to learn, network, and collaborate with like-minded individuals.",
+      "Two teams strived to improve Spryker security! One team worked on building a tool for extended auditing capabilities, while the other team built a POC for a Multifactor authentication tool for the Spryker backend.",
     theme: "Security",
     location: "Berlin, Germany",
     organizer: "Turbine Kreuzberg",
@@ -77,55 +85,71 @@ const events: Event[] = [
     btnURL: "/",
     logo: turbine,
     logoAlt: "Turbine Kreuzberg",
+    githubExists: true,
+    github: "https://github.com/orgs/spryker-community/repositories?q=hackathon-may-2024",
+    youtubeExists: false,
+    youtube: "/"
   },
   {
     isRightRecap: true,
     title: "Hackathon March 2024",
     description:
-      "Placeholder description of this event. Hackathons are a great way to learn, network, and collaborate with like-minded individuals.",
+      "Speeding up development was the theme of this Spryker hackathon. 5 teams worked on a mass data importer, a programmable maker bundle, localized developement setup and even making Spryker run on a Steamdeck gameconsole!",
     theme: "Double your development speed",
     location: "Berlin, Germany",
     organizer: "Spryker",
     single: false,
-    imgOne: constructionWorkers,
+    imgOne: marchPaperplane,
     imgOneAlt: "Construction workers orchestrating a project",
-    imgTwo: aerialView,
+    imgTwo: marchWinners,
     imgTwoAlt: "Aerial view of managed construction",
     logo: spryker,
     logoAlt: "Spryker",
+    githubExists: true,
+    github: "https://github.com/orgs/spryker-community/repositories?q=march-2024",
+    youtubeExists: true,
+    youtube: "https://www.youtube.com/playlist?list=PLJooqCSo73SjaajuYUupPOMitm_nHf8VY"
   },
   {
     isRightRecap: false,
     title: "Hackathon September 2023",
     description:
-      "Placeholder description of this event. Hackathons are a great way to learn, network, and collaborate with like-minded individuals.",
+      "6 teams strived for the big prizes during the first hackathon hosted by Spryker itself. The teams worked on various topics, from creating a desktop app, a dashboard inside Oryx, generating product content with AI and more.",
     theme: "Frontend development with Oryx",
     location: "Berlin, Germany",
     organizer: "Spryker",
-    img: usingTools,
+    img: hack2023,
     imgAlt:
       "Man in orange and black vest wearing white helmet holding yellow and black power tool",
     logo: spryker,
     logoAlt: "Spryker",
+    githubExists: true,
+    github: "https://github.com/orgs/spryker-community/repositories?q=sept-2023",
+    youtubeExists: true,
+    youtube: "https://www.youtube.com/watch?v=hXUtS80N6Ro&list=PLJooqCSo73SgU6eSkCDv1_a6pLyUGyewW"
   },
   {
     isRightRecap: true,
     title: "EXCITE Developer Stage 2023",
     description:
-      "Placeholder description of this event. Hackathons are a great way to learn, network, and collaborate with like-minded individuals.",
+      "In 2023 we had our first ever Developer Stage at EXCITE! Our EVP Engineering & Technology Ulf Bonfert and VP Architecture Denis Turkov hosted a full afternoon of technical insighst and demo's. To be repeated in 2024 in a much bigger room!",
     single: false,
     theme: "Frontend development with Oryx",
     location: "Berlin, Germany",
     organizer: "Spryker",
-    imgOne: sprykerOskar,
+    imgOne: ready,
     imgOneAlt: "Oskar, the Spryker Mascot.",
-    imgTwo: exciteStage,
+    imgTwo: denis,
     imgTwoAlt: "Guido and Yara on stage at Spryker EXCITE 2023",
     btnExists: true,
     btnTitle: "Register for EXCITE 2024",
     btnURL: "https://spryker.com/events/excite-2024/",
     logo: spryker,
     logoAlt: "Spryker",
+    githubExists: false,
+    github: "/",
+    youtubeExists: false,
+    youtube: "/"
   },
 ];
 
@@ -182,8 +206,12 @@ const pageTitle: string = `Event Recaps | ${SITE.title}`;
           btnURL={event.btnURL}
           location={event.location}
           organizer={event.organizer}
+          github={event.github}
           logo={event.logo}
           logoAlt={event.logoAlt ?? ""}
+          githubExists={event.githubExists}
+          youtubeExists={event.youtubeExists}
+          youtube={event.youtube}
         />
       ) : (
         <LeftRecap
@@ -195,9 +223,13 @@ const pageTitle: string = `Event Recaps | ${SITE.title}`;
           btnTitle={event.btnTitle}
           btnURL={event.btnURL}
           organizer={event.organizer}
+          github={event.github}
           location={event.location}
           logo={event.logo}
           logoAlt={event.logoAlt ?? ""}
+          githubExists={event.githubExists}
+          youtubeExists={event.youtubeExists}
+          youtube={event.youtube}
         />
       );
     })
