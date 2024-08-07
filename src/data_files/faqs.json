@@ -1,5 +1,5 @@
 {
-  "subTitle": "Ask us anything about our brand, products and services",
+  "subTitle": "Ask us anything about our brand, products and services.",
   "faqs": [
     {
       "question": "What is the relationship between Spryker and CommerceQuest?",
@@ -11,7 +11,7 @@
     },
     {
       "question": "Do I need to be an active member?",
-      "answer": "Nope, you can just be a lurker and ask questions in our forum 😊. If you want, you can always become more active in answering questions, participating in events or even organizing a community event. You decide what you wnat to do."
+      "answer": "Nope, you can just be a lurker and ask questions in our forum 😊. If you want, you can always become more active in answering questions, participating in events or even organizing a community event. You decide what you want to do."
     },
     {
       "question": "Who is your target audience?",
